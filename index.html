@@ -3,11 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unity WebGL Player | WINGS OUT</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="manifest" href="./manifest.json">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="pwa">
+    <link rel="apple-touch-icon" href="./images/icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="./images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport4.json", {onProgress: UnityProgress});
     </script>
@@ -21,5 +31,6 @@
         <div class="title">WINGS OUT</div>
       </div>
     </div>
+    <script src="./scripts/app.js" async></script>
   </body>
 </html>
