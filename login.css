@@ -488,3 +488,17 @@ body {
 }/*#DIV_4*/
 
 /*brand css*/
+.modal-class {
+    /*margin-top: 20% !important;*/
+    top: 20%;
+}
+.btn-class-seatPlan {
+		position: fixed;
+		bottom: 10px;
+		right: 40%;
+}
+.btn-class-play {
+		position: fixed;
+		bottom: 10px;
+		right: 55%;
+}
