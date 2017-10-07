@@ -1,6 +1,6 @@
 {
-  "name": "pwa",
-  "short_name": "pwa",
+  "name": "AeroWalk",
+  "short_name": "AeroWalk",
   "icons": [{
     "src": "images/icons/icon-128x128.png",
       "sizes": "128x128",

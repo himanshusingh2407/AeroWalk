@@ -1,36 +1,115 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unity WebGL Player | WINGS OUT</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>
-    <script src="Build/UnityLoader.js"></script>
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
-    <link rel="manifest" href="./manifest.json">
-    <!-- Add to home screen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="pwa">
-    <link rel="apple-touch-icon" href="./images/icons/icon-152x152.png">
-    <meta name="msapplication-TileImage" content="./images/icons/icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#2F3BA2">
-    <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport4.json", {onProgress: UnityProgress});
-    </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">WINGS OUT</div>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroWalk | WINGS OUT</title>
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+
+
+
+  <script src="TemplateData/UnityProgress.js"></script>
+  <script src="Build/UnityLoader.js"></script>
+
+  <link rel="stylesheet" href="./login.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  <link rel="manifest" href="./manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="pwa">
+  <link rel="apple-touch-icon" href="./images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="./images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+</head>
+
+<body>
+  <header>
+    <div id="DIV_11">
+      <div id="DIV_12">
+        <a href="javascript:void(0)" id="A_13"></a>
+      </div>
+      <!-- start: Site name and Slogan hgroup -->
+
+      <div id="DIV_14">
+        <!--<h1 id="site-name" class="element-invisible" id="site-name"><a href="/trip/" title="Home page" class="active">Vistara</a></h1>-->
+
+      </div>
+      <!-- /end #name-and-slogan -->
+
+    </div>
+  </header>
+  <div id="DIV_1">
+    <div id="DIV_2">
+      <div id="DIV_3"> <button type="button" id="BUTTON_4">
+                     <!-- <span id="SPAN_5">×</span><span id="SPAN_6">Close</span> -->
+                </button>
+        <h4 id="H4_7">
+                    Ticket Details
+                </h4> </div>
+      <div id="DIV_8">
+        <div id="DIV_9"> </div>
+        <form name="login_form" id="FORM_10">
+          <ul id="UL_11">
+            <li id="LI_12"> <input type="hidden" id="INPUT_13" value="General" />
+              <input id="INPUT_14" name="flyerid" type="text" placeholder="Email Id" required/>
+            </li>
+            <li id="LI_15">
+              <input id="INPUT_16" type="text" name="pin" maxlength="6" placeholder="PNR" required/>
+            </li>
+          </ul>
+          <br>
+          <input type="hidden" name="browserTabID" id="INPUT_17" />
+          <div id="DIV_18"> <input type="button" id="INPUT_19" value="Show" />
+            <!-- <input type="button" value="Register" id="INPUT_20" /><br id="BR_21" /><br id="BR_22" /> <a href="javascript:void(0)" id="A_23">Forgot PIN ?</a>  -->
+          </div>
+        </form>
       </div>
     </div>
-    <script src="./scripts/app.js" async></script>
-  </body>
+  </div>
+  <div class="webgl-content">
+    <div id="gameContainer" style="width: 960px; height: 600px"></div>
+    <div class="footer">
+      <div class="webgl-logo"></div>
+      <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+      <div class="title">WINGS OUT</div>
+    </div>
+  </div>
+  <script src="./scripts/app.js" async></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.webgl-content').hide();
+      $("#INPUT_19").click(function() {
+        var email = $('#INPUT_14').val();
+        var pnr = $('#INPUT_16').val();
+        $.ajax({
+          type: "GET",
+          url: "https://sims3.knolskape.com/airport/public/?email=" + email + "&pnr=" + pnr,
+          success: function(data) {
+            $('.webgl-content').show();
+            $('#DIV_1').hide();
+            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport4.json", {
+              onProgress: UnityProgress
+            });
+            console.log(data);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
 </html>
