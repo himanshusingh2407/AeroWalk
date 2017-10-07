@@ -43,7 +43,15 @@
         <a href="javascript:void(0)" id="A_13"></a>
       </div>
       <!-- start: Site name and Slogan hgroup -->
-
+      <div style="
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding-right: 30px;
+">
+        <button type="button" id="logout">LOGOUT</button>
+      </div>
       <div id="DIV_14">
         <!--<h1 id="site-name" class="element-invisible" id="site-name"><a href="/trip/" title="Home page" class="active">Vistara</a></h1>-->
 
@@ -91,22 +99,42 @@
   <script src="./scripts/app.js" async></script>
   <script type="text/javascript">
     $(document).ready(function() {
-      $('.webgl-content').hide();
+      if (localStorage.getItem('login') === "1") {
+        $('#DIV_1').hide();
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport4.json", {
+          onProgress: UnityProgress
+        });
+      } else {
+        $('.webgl-content').hide();
+        $('#logout').hide();
+      }
       $("#INPUT_19").click(function() {
         var email = $('#INPUT_14').val();
         var pnr = $('#INPUT_16').val();
+        if (!$('#INPUT_14').val() || !$('#INPUT_16').val()) {
+          alert('Please fill in all details.');
+          return;
+        }
         $.ajax({
           type: "GET",
           url: "https://sims3.knolskape.com/airport/public/?email=" + email + "&pnr=" + pnr,
           success: function(data) {
             $('.webgl-content').show();
+            $('#logout').show();
             $('#DIV_1').hide();
             var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport4.json", {
               onProgress: UnityProgress
             });
+            localStorage.setItem('login', 1);
             console.log(data);
           }
         });
+      });
+      $("#logout").click(function() {
+        localStorage.setItem('login', 0);
+        $('.webgl-content').hide();
+        $('#logout').hide();
+        $('#DIV_1').show();
       });
     });
   </script>
