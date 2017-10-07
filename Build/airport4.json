@@ -1,0 +1,9 @@
+{
+"TOTAL_MEMORY": 268435456,
+"dataUrl": "airport4.data.unityweb",
+"asmCodeUrl": "airport4.asm.code.unityweb",
+"asmMemoryUrl": "airport4.asm.memory.unityweb",
+"asmFrameworkUrl": "airport4.asm.framework.unityweb",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#222C36"
+}
