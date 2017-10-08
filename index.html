@@ -165,7 +165,7 @@
       if (localStorage.getItem('login') === "1") {
         $('#DIV_1').hide();
         // $('#seatNo').html(Math.ceil(Math.random()*30) + 'A');
-        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport6.json", {
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport7.json", {
           onProgress: UnityProgress
         });
       } else {
@@ -188,7 +188,7 @@
             $('.content-body').show();
             $('#logout').show();
             $('#DIV_1').hide();
-            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport6.json", {
+            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport7.json", {
               onProgress: UnityProgress
             });
             localStorage.setItem('login', 1);
