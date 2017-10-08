@@ -95,7 +95,7 @@
     <tbody>
       <tr>
         <td>Name</td>
-        <td>John Doe</td>
+        <td>Rakesh Saxena</td>
       </tr>
       <tr>
         <td>PNR </td>
@@ -123,9 +123,11 @@
     <div class="webgl-content">
       <div id="gameContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
-        <div class="webgl-logo"></div>
+        <!-- <div class="webgl-logo"></div> -->
         <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">WINGS OUT</div>
+        <div class="title">
+            Click on the Simulation to Pause/Play it.
+          </div>
       </div>
     </div>
     <div id="myModal" class="modal fade" role="dialog">
@@ -145,7 +147,7 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-info btn-lg btn-class-play" id="pause" style="width:100px">Pause</button>
+    <!-- <button type="button" class="btn btn-info btn-lg btn-class-play" id="pause" style="width:100px">Pause</button> -->
     <button type="button" class="btn btn-info btn-lg btn-class-seatPlan" data-toggle="modal" data-target="#myModal">Seat Plan</button>
   </div>
   <script src="./scripts/app.js" async></script>
@@ -153,7 +155,7 @@
     $(document).ready(function() {
       if (localStorage.getItem('login') === "1") {
         $('#DIV_1').hide();
-        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport4.json", {
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport6.json", {
           onProgress: UnityProgress
         });
       } else {
@@ -167,7 +169,7 @@
           alert('Please fill in all details.');
           return;
         }
-        $('#pnr').html(pnr);
+        $('#pnr').html(pnr || localStorage.getItem('pnr'));
         $.ajax({
           type: "GET",
           url: "https://sims3.knolskape.com/airport/public/?email=" + email + "&pnr=" + pnr,
@@ -175,10 +177,11 @@
             $('.content-body').show();
             $('#logout').show();
             $('#DIV_1').hide();
-            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport4.json", {
+            var gameInstance = UnityLoader.instantiate("gameContainer", "Build/airport6.json", {
               onProgress: UnityProgress
             });
             localStorage.setItem('login', 1);
+            localStorage.setItem('pnr', 1);
             console.log(data);
           }
         });
